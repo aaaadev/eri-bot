@@ -2,7 +2,7 @@ version: "3"
 
 services:
   eri-bot:
-    image: docker.astar.moe/eri-bot:latest
+    build: .
     restart: always
     volumes:
       - ./App.toml:/app/App.toml:z
