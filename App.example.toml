@@ -1,0 +1,12 @@
+# Default value: "YOUR_TOKEN_HERE"
+#discord_token = "YOUR_TOKEN_HERE"
+
+# Default value: 0
+#main_guild = 0
+
+# Default value: []
+#admins = []
+
+[channels]
+# Default value: 0
+#console = 0
