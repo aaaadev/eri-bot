@@ -1,12 +1,8 @@
-# Default value: "YOUR_TOKEN_HERE"
-#discord_token = "YOUR_TOKEN_HERE"
-
-# Default value: 0
-#main_guild = 0
-
-# Default value: []
-#admins = []
+discord_token = "YOUR_TOKEN_HERE"
+reset_time = "06:00:00"
+main_guild = 0
+verified_role = 0
 
 [channels]
-# Default value: 0
-#console = 0
+private = 0
+console = 0
