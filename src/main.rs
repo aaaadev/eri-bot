@@ -215,6 +215,7 @@ async fn main() {
         .intents(serenity::GatewayIntents::privileged())
         .setup(|ctx, _ready, framework| {
             Box::pin(async move {
+                ctx.set_activity(serenity::Activity::playing(format!("{} {} ({})", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"), env!("COMMIT_HASH")))).await;
                 let http = Arc::clone(&ctx.http);
                 poise::builtins::register_globally(ctx, &framework.options().commands).await?;
                 let (tx, mut rx) = mpsc::unbounded_channel::<TimerCommand>();
