@@ -79,7 +79,13 @@ pub async fn clean(http: Arc<serenity::Http>, channel: serenity::ChannelId) -> R
             Err(_) => break,
         }
     }
-    channel.delete_messages(Arc::clone(&http), msg_ids).await?;
+    let n = msg_ids.len();
+    let mut s = 0;
+    for _i in 0..(n/100) {
+        channel.delete_messages(Arc::clone(&http), msg_ids.get(s..(s+100)).unwrap()).await?;
+        s += 100;
+    }
+    channel.delete_messages(Arc::clone(&http), msg_ids.get(s..).unwrap()).await?;
     channel
         .say(Arc::clone(&http), format!("🗑️ Cleaned!"))
         .await?;
